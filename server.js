@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.send('Welcome to petroks application.')
 });
-
+require("./app/routes/turorial.routes")(app);
 const PORT = process.env.PORT || 8080;
 Promise.resolve()
   .then(() => db.sequelize.sync()) // add {forse: true} for force sync of all database models
